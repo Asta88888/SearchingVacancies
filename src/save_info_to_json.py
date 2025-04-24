@@ -30,11 +30,16 @@ class SaveInfoToJson(BaseSaverToJson):
             json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-    def add_vacancies(self, vacancy):
-        """Добавляет вакансию в файл с генерацией уникального идентификатора"""
+    def add_vacancies(self, vacancies):
+        """Добавляет одну или несколько вакансий в файл с генерацией уникального идентификатора"""
         data = self.load()
-        vacancy["id"] = str(uuid4())
-        data.append(vacancy)
+        if isinstance(vacancies, list):
+            for vacancy in vacancies:
+                vacancy["id"] = str(uuid4())
+                data.append(vacancy)
+        else:
+            vacancies["id"] = str(uuid4())
+            data.append(vacancies)
         self.save(data)
 
 
