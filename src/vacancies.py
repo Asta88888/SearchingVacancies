@@ -33,7 +33,6 @@ class Vacancies:
     def validate_salary(self, salary: Any) -> Union[int, float, str, None]:
         """Валидация значения зарплаты"""
         if isinstance(salary, dict):
-            # Ожидаем словарь с ключами "from" и "to"
             min_salary = salary.get("from")
             max_salary = salary.get("to")
             if min_salary is not None:
@@ -45,8 +44,7 @@ class Vacancies:
         if isinstance(salary, (int, float)):
             return salary
         if isinstance(salary, str):
-            # Попытка извлечь минимальное число из строки типа "100 000-150 000 руб."
-            nums = re.findall(r'\d+', salary.replace(" ", ""))
+                nums = re.findall(r'\d+', salary.replace(" ", ""))
             if nums:
                 return int(nums[0])
             else:
@@ -58,7 +56,6 @@ class Vacancies:
         """Возвращает минимальную числовую зарплату или None"""
         if isinstance(self.salary, (int, float)):
             return self.salary
-        # Если зарплата — строка, пытаемся извлечь число
         if isinstance(self.salary, str):
             nums = re.findall(r'\d+', self.salary.replace(" ", ""))
             if nums:

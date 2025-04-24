@@ -32,7 +32,7 @@ class HeadHunterApi(BaseApi):
             return []
 
 
-if __name__ == "__main__":
-    hh = HeadHunterApi()
-    vacancies = hh.get_vacancies("Python разработчик")
-    print(vacancies)
+# if __name__ == "__main__":
+#     hh = HeadHunterApi()
+#     vacancies = hh.get_vacancies("Python разработчик")
+#     print(vacancies)
