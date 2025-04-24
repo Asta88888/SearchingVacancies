@@ -159,5 +159,61 @@
         "salary": 100000,
         "description": "Открытая",
         "id": "ec1df14d-8a8f-4a08-b008-fcc5355aebc3"
+    },
+    {
+        "name": "Data Scientist",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": "150000",
+        "description": "Открытая",
+        "id": "6f30a24d-6356-4697-ae59-c3c710185dfa"
+    },
+    {
+        "name": "Python разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "800fa8fc-38c5-46f2-9a19-75b82aa15dd0"
+    },
+    {
+        "name": "Java разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 50000,
+        "description": "Открытая",
+        "id": "d3f54ae1-60fa-408c-af81-e058d6e04e6a"
+    },
+    {
+        "name": "SQL разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "746b87aa-9be5-468c-bba9-e462260df2a2"
+    },
+    {
+        "name": "Data Scientist",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": "150000",
+        "description": "Открытая",
+        "id": "01199212-c971-449f-b54b-0e5db2bb7915"
+    },
+    {
+        "name": "Python разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "3fb1e0f9-122d-4d9b-9b07-847ac2a5f217"
+    },
+    {
+        "name": "Java разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 50000,
+        "description": "Открытая",
+        "id": "70731255-9bab-4183-b72d-33a24b6d328f"
+    },
+    {
+        "name": "SQL разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "fcd7ddbf-de5f-480e-9e71-02f1a9012bc8"
     }
 ]

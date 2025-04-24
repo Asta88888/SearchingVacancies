@@ -64,45 +64,43 @@ class SaveInfoToJson(BaseSaverToJson):
         self.save([])
 
 
-if __name__ == "__main__":
-    storage = SaveInfoToJson()
-
-    vacancy_data = {
-        "name": "Data Scientist",
-        "url": "https://hh.ru/vacancy/119631518",
-        "salary": "150000",
-        "description": "Открытая"
-    }
-    vacancy_data1 = {
-        "name": "Python разработчик",
-        "url": "https://hh.ru/vacancy/119631518",
-        "salary": 100000,
-        "description": "Открытая"
-    }
-    vacancy_data2 = {
-        "name": "Java разработчик",
-        "url": "https://hh.ru/vacancy/119631518",
-        "salary": 50000,
-        "description": "Открытая"
-    }
-    vacancy_data3 = {
-        "name": "SQL разработчик",
-        "url": "https://hh.ru/vacancy/119631518",
-        "salary": 100000,
-        "description": "Открытая"
-    }
-
-    storage.add_vacancies(vacancy_data)
-    storage.add_vacancies(vacancy_data1)
-    storage.add_vacancies(vacancy_data2)
-    storage.add_vacancies(vacancy_data3)
-
-
-    found = storage.get_vacancies(name="SQL разработчик")
-    print(f"Найдено {len(found)} вакансий:\n", found)
-
-
-    # storage.delete_vacancies("341b3998-a0e7-4712-84f4-ecd353bed2c8")
-    # storage.clear_storage()
-
-
+# if __name__ == "__main__":
+#     storage = SaveInfoToJson()
+#
+#     vacancy_data = {
+#         "name": "Data Scientist",
+#         "url": "https://hh.ru/vacancy/119631518",
+#         "salary": "150000",
+#         "description": "Открытая"
+#     }
+#     vacancy_data1 = {
+#         "name": "Python разработчик",
+#         "url": "https://hh.ru/vacancy/119631518",
+#         "salary": 100000,
+#         "description": "Открытая"
+#     }
+#     vacancy_data2 = {
+#         "name": "Java разработчик",
+#         "url": "https://hh.ru/vacancy/119631518",
+#         "salary": 50000,
+#         "description": "Открытая"
+#     }
+#     vacancy_data3 = {
+#         "name": "SQL разработчик",
+#         "url": "https://hh.ru/vacancy/119631518",
+#         "salary": 100000,
+#         "description": "Открытая"
+#     }
+#
+#     storage.add_vacancies(vacancy_data)
+#     storage.add_vacancies(vacancy_data1)
+#     storage.add_vacancies(vacancy_data2)
+#     storage.add_vacancies(vacancy_data3)
+#
+#
+#     found = storage.get_vacancies(name="SQL разработчик")
+#     print(f"Найдено {len(found)} вакансий:\n", found)
+#
+#
+#     # storage.delete_vacancies("341b3998-a0e7-4712-84f4-ecd353bed2c8")
+#     # storage.clear_storage()
