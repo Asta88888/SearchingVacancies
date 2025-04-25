@@ -44,7 +44,7 @@ class Vacancies:
         if isinstance(salary, (int, float)):
             return salary
         if isinstance(salary, str):
-                nums = re.findall(r'\d+', salary.replace(" ", ""))
+            nums = re.findall(r'\d+', salary.replace(" ", ""))
             if nums:
                 return int(nums[0])
             else:
@@ -70,13 +70,13 @@ class Vacancies:
 
         if self_salary is not None and other_salary is not None:
             if self_salary > other_salary:
-                print(f"Зарплата у {self.name} больше, чем у {other.name}")
+                return f"Зарплата у {self.name} больше, чем у {other.name}"
             elif self_salary < other_salary:
-                print(f"Зарплата у {self.name} меньше, чем у {other.name}")
+                return f"Зарплата у {self.name} меньше, чем у {other.name}"
             else:
-                print(f"Зарплата у {self.name} и у {other.name} одинакова")
+                return f"Зарплата у {self.name} и у {other.name} одинакова"
         else:
-            print(f"Сравнение невозможно: у одной из вакансий не указана зарплата.")
+            return f"Сравнение невозможно: у одной из вакансий не указана зарплата."
 
 
     @staticmethod
@@ -87,24 +87,24 @@ class Vacancies:
         return sorted_vacancies
 
 
-if __name__ == "__main__":
-    v1 = Vacancies("Python разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
-    v2 = Vacancies("Java разработчик", "https://hh.ru/vacancy/119631518", 50000, "Открытая")
-    v3 = Vacancies("SQL разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
-    v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None,"Открытая")
-
-    print("---------")
-    v1.salary_comparison(v2)
-    v1.salary_comparison(v3)
-    v1.salary_comparison(v4)
-    print("---------")
-    print(v1)
-    print(v2)
-    print(v3)
-    print(v4)
-    print("---------")
-    vacancies = [v1, v2, v3, v4]
-    sorted_vacancies = Vacancies.sorted_vacancies_by_salary(vacancies)
-    print("\nОтсортированные вакансии:")
-    for vacancy in sorted_vacancies:
-        print(vacancy)
+# if __name__ == "__main__":
+#     v1 = Vacancies("Python разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
+#     v2 = Vacancies("Java разработчик", "https://hh.ru/vacancy/119631518", 50000, "Открытая")
+#     v3 = Vacancies("SQL разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
+#     v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None,"Открытая")
+#
+#     print("---------")
+#     v1.salary_comparison(v2)
+#     v1.salary_comparison(v3)
+#     v1.salary_comparison(v4)
+#     print("---------")
+#     print(v1)
+#     print(v2)
+#     print(v3)
+#     print(v4)
+#     print("---------")
+#     vacancies = [v1, v2, v3, v4]
+#     sorted_vacancies = Vacancies.sorted_vacancies_by_salary(vacancies)
+#     print("\nОтсортированные вакансии:")
+#     for vacancy in sorted_vacancies:
+#         print(vacancy)

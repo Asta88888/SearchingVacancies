@@ -4,6 +4,7 @@ import tempfile
 import pytest
 from src.api import HeadHunterApi
 from src.save_info_to_json import SaveInfoToJson
+from src.vacancies import Vacancies
 
 
 @pytest.fixture
@@ -47,3 +48,12 @@ def multiple_vacancies():
             "description": "Открытая"
         }
     ]
+
+
+@pytest.fixture
+def sample_vacancies(single_vacancy, multiple_vacancies):
+    v1 = Vacancies(**single_vacancy)
+    v2 = Vacancies(**multiple_vacancies[0])
+    v3 = Vacancies(**multiple_vacancies[1])
+    v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None, "Открытая")
+    return v1, v2, v3, v4
