@@ -11,7 +11,7 @@ class Vacancies:
         """Конструктор экземпляра вакансии"""
         self.name = name
         self.url = url
-        self.salary = self.validate_salary(salary)
+        self.salary = self._validate_salary(salary)
         self.description = description
 
 
@@ -30,7 +30,7 @@ class Vacancies:
         }
 
 
-    def validate_salary(self, salary: Any) -> Union[int, float, str, None]:
+    def _validate_salary(self, salary: Any) -> Union[int, float, str, None]:
         """Валидация значения зарплаты"""
         if isinstance(salary, dict):
             min_salary = salary.get("from")
@@ -63,20 +63,22 @@ class Vacancies:
         return None
 
 
-    def salary_comparison(self, other):
-        """Сравнивает зарплату текущей вакансии с другой"""
-        self_salary = self.get_min_salary()
-        other_salary = other.get_min_salary()
+    def __lt__(self, other):
+        if not isinstance(other, Vacancies):
+            return NotImplemented
+        return (self.get_min_salary() or 0) < (other.get_min_salary() or 0)
 
-        if self_salary is not None and other_salary is not None:
-            if self_salary > other_salary:
-                return f"Зарплата у {self.name} больше, чем у {other.name}"
-            elif self_salary < other_salary:
-                return f"Зарплата у {self.name} меньше, чем у {other.name}"
-            else:
-                return f"Зарплата у {self.name} и у {other.name} одинакова"
-        else:
-            return f"Сравнение невозможно: у одной из вакансий не указана зарплата."
+
+    def __gt__(self, other):
+        if not isinstance(other, Vacancies):
+            return NotImplemented
+        return (self.get_min_salary() or 0) > (other.get_min_salary() or 0)
+
+
+    def __eq__(self, other):
+        if not isinstance(other, Vacancies):
+            return NotImplemented
+        return (self.get_min_salary() or 0) == (other.get_min_salary() or 0)
 
 
     @staticmethod
@@ -87,24 +89,23 @@ class Vacancies:
         return sorted_vacancies
 
 
-# if __name__ == "__main__":
-#     v1 = Vacancies("Python разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
-#     v2 = Vacancies("Java разработчик", "https://hh.ru/vacancy/119631518", 50000, "Открытая")
-#     v3 = Vacancies("SQL разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
-#     v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None,"Открытая")
-#
-#     print("---------")
-#     v1.salary_comparison(v2)
-#     v1.salary_comparison(v3)
-#     v1.salary_comparison(v4)
-#     print("---------")
-#     print(v1)
-#     print(v2)
-#     print(v3)
-#     print(v4)
-#     print("---------")
-#     vacancies = [v1, v2, v3, v4]
-#     sorted_vacancies = Vacancies.sorted_vacancies_by_salary(vacancies)
-#     print("\nОтсортированные вакансии:")
-#     for vacancy in sorted_vacancies:
-#         print(vacancy)
+if __name__ == "__main__":
+    v1 = Vacancies("Python разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
+    v2 = Vacancies("Java разработчик", "https://hh.ru/vacancy/119631518", 50000, "Открытая")
+    v3 = Vacancies("SQL разработчик", "https://hh.ru/vacancy/119631518", 100000, "Открытая")
+    v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None,"Открытая")
+
+    print("---------")
+    print(v1>v2)
+
+    print("---------")
+    print(v1)
+    print(v2)
+    print(v3)
+    print(v4)
+    print("---------")
+    vacancies = [v1, v2, v3, v4]
+    sorted_vacancies = Vacancies.sorted_vacancies_by_salary(vacancies)
+    print("\nОтсортированные вакансии:")
+    for vacancy in sorted_vacancies:
+        print(vacancy)
