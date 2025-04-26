@@ -21,7 +21,7 @@ class Vacancies:
         return f"{self.name} - {salary_str}\n{self.description}\n{self.url}"
 
 
-    def to_dict(self):
+    def cast_to_dict(self):
         return {
             "name": self.name,
             "url": self.url,

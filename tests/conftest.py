@@ -57,3 +57,10 @@ def sample_vacancies(single_vacancy, multiple_vacancies):
     v3 = Vacancies(**multiple_vacancies[1])
     v4 = Vacancies("Junior разработчик", "https://hh.ru/vacancy/119631518", None, "Открытая")
     return v1, v2, v3, v4
+
+
+@pytest.fixture
+def vacancies_objects(single_vacancy, multiple_vacancies):
+    single = Vacancies(**single_vacancy)
+    multiple = [Vacancies(**vac) for vac in multiple_vacancies]
+    return [single] + multiple

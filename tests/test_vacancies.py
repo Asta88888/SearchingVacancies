@@ -56,7 +56,7 @@ def test_validate_salary(salary_input, expected):
 ])
 def test_to_dict(salary_input, expected):
     vacancy = Vacancies("Python разработчик", "https://hh.ru/vacancy/119631518", salary_input, "Открытая")
-    result = vacancy.to_dict()
+    result = vacancy.cast_to_dict()
     assert isinstance(result, dict)
     assert result["name"] == "Python разработчик"
     assert result["url"] == "https://hh.ru/vacancy/119631518"

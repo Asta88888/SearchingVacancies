@@ -23,7 +23,7 @@ def main():
     for vac in vacancies_list[:5]:
         print(f"{vac.name}: '{vac.description[:50]}...'")
 
-    storage.add_vacancies([vac.to_dict() for vac in vacancies_list])
+    storage.add_vacancies([vac.cast_to_dict() for vac in vacancies_list])
 
     filter_words = input("Введите ключевые слова для фильтрации вакансий").split()
     salary_range = input("Введите диапазон зарплат через тире").replace(" ", "")
