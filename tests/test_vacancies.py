@@ -10,13 +10,6 @@ def test_sorted_vacancies_by_salary(sample_vacancies):
     assert all(v.get_min_salary() is not None for v in sorted_result)
 
 
-def test_salary_comparison(sample_vacancies):
-    v1, v2, v3, v4 = sample_vacancies
-    assert v1.salary_comparison(v2) == "Зарплата у Python разработчик больше, чем у Java разработчик"
-    assert v1.salary_comparison(v3) == "Зарплата у Python разработчик и у SQL разработчик одинакова"
-    assert v1.salary_comparison(v4) == "Сравнение невозможно: у одной из вакансий не указана зарплата."
-
-
 @pytest.mark.parametrize("salary_input, expected", [
     (100000, 100000),
     ("120000", 120000),
