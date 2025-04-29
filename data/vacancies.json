@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Data Scientist",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": "150000",
+        "description": "Открытая",
+        "id": "79d349f2-2957-4f40-9911-7cb9a0317994"
+    },
+    {
+        "name": "Python разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "8708fad4-43e8-467f-9dba-f6ff438b6f74"
+    },
+    {
+        "name": "Java разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 50000,
+        "description": "Открытая",
+        "id": "8b1234f8-53a4-4b26-a7f2-3ec9aa8c7628"
+    },
+    {
+        "name": "SQL разработчик",
+        "url": "https://hh.ru/vacancy/119631518",
+        "salary": 100000,
+        "description": "Открытая",
+        "id": "aa0166ca-e482-4b05-b37f-10491ebdabc9"
+    }
+]
